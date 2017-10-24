@@ -1,29 +1,27 @@
 package homework01;
 
-import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-public class ConfigManager {
+import homework02.JsonManager;
+
+public class ConfigManager implements JsonManager {
+
+	private static final String PATH = "src\\homework01\\config.json";
 
 	private List<Config> configs = new ArrayList<Config>();
 
 	private Integer count;
 
-	public List<Config> processConfigs() {
+	@Override
+	public void processJsonConfig() {
 		configs.clear();
 
 		try {
-			FileReader fileReader = new FileReader(new File("src\\homework01\\config.json"));
-			JSONParser jsonParser = new JSONParser();
-			JSONObject wholeJson = (JSONObject) jsonParser.parse(fileReader);
-
-			JSONArray configsJsonArray = (JSONArray) wholeJson.get("configs");
+			JSONArray configsJsonArray = (JSONArray) getJsonObject(PATH).get("configs");
 			for (int i = 0; i < configsJsonArray.size(); i++) {
 				JSONObject configJsonObj = (JSONObject) configsJsonArray.get(i);
 
@@ -41,13 +39,18 @@ public class ConfigManager {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return configs;
 	}
 
+	@Override
 	public Integer getCount() {
 		if (count == null) {
 			count = configs.size();
 		}
 		return count;
+	}
+
+	@Override
+	public void printListContent() {
+		configs.forEach(config -> System.out.println(config));
 	}
 }

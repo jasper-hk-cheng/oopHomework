@@ -1,29 +1,27 @@
 package homework01;
 
-import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-public class ScheduleManager {
+import homework02.JsonManager;
+
+public class ScheduleManager implements JsonManager {
+
+	private static final String PATH = "src\\homework01\\schedule.json";
 
 	private List<Schedule> schedules = new ArrayList<Schedule>();
 
 	private Integer count;
 
-	public List<Schedule> processSchedules() {
+	@Override
+	public void processJsonConfig() {
 		schedules.clear();
 
 		try {
-			FileReader fileReader = new FileReader(new File("src\\homework01\\schedule.json"));
-			JSONParser jsonParser = new JSONParser();
-			JSONObject wholeJson = (JSONObject) jsonParser.parse(fileReader);
-
-			JSONArray schedulesJsonArray = (JSONArray) wholeJson.get("schedules");
+			JSONArray schedulesJsonArray = (JSONArray) getJsonObject(PATH).get("schedules");
 			for (int i = 0; i < schedulesJsonArray.size(); i++) {
 				JSONObject scheduleJsonObj = (JSONObject) schedulesJsonArray.get(i);
 
@@ -36,13 +34,18 @@ public class ScheduleManager {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return schedules;
 	}
 
+	@Override
 	public Integer getCount() {
 		if (count == null) {
 			count = schedules.size();
 		}
 		return count;
+	}
+
+	@Override
+	public void printListContent() {
+		schedules.forEach(schedule -> System.out.println(schedule));
 	}
 }
