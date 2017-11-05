@@ -1,0 +1,8 @@
+{
+	"file": "UnitFileHandler",
+	"unitDirectory": "UnitDirectoryHandler",
+	"zip": "ZipHandler",
+	"encode": "EncodeHandler",
+	"directory": "DestinationDirectoryHandler",
+	"destinationDatabase": "DestinationDatabaseHandler"
+}

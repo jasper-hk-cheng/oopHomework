@@ -1,4 +1,4 @@
-package homework02;
+package oop.manager;
 
 import java.io.File;
 import java.io.FileReader;

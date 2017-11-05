@@ -1,41 +1,43 @@
-package homework01;
+package oop.javabean;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
 
 import org.json.simple.JSONObject;
 
 public class Schedule {
 
-	private String ext;
+	private JSONObject schedule;
 	private Timestamp time;
-	private String interval;
 
 	private static final DateFormat dateFormat = new SimpleDateFormat("HH:mm");
 
 	/**
 	 * constructor the unit of interval is minute...(i guess so...)
 	 */
-	public Schedule(String ext, String time, String interval) {
+	public Schedule(JSONObject scheduleJsonObject) {
+		/*
+		 * parse the timelike string as timestamp object
+		 */
 		try {
-			this.ext = ext;
-			long longTime = dateFormat.parse(time).getTime();
-			this.time = new Timestamp(longTime);
-			this.interval = interval;
-			
+			String strTime = (String) scheduleJsonObject.get("time");
+			scheduleJsonObject.remove("time");
+
+			this.time = new Timestamp(dateFormat.parse(strTime).getTime());
+			this.schedule = scheduleJsonObject;
+
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/*
 	 * getter
 	 */
 	public String getExt() {
-		return ext;
+		return (String) schedule.get("ext");
 	}
 
 	public Timestamp getTime() {
@@ -43,21 +45,16 @@ public class Schedule {
 	}
 
 	public String getInterval() {
-		return interval;
+		return (String) schedule.get("interval");
 	}
-	
+
 	/**
 	 * override toString method
 	 */
 	@Override
 	public String toString() {
-		JSONObject thisSchedule = new JSONObject(new HashMap<String, Object>() {
-			{
-				put("ext", ext);
-				put("time", dateFormat.format(time));
-				put("interval", interval);
-			}
-		});
-		return thisSchedule.toJSONString();
-	} 
+		JSONObject scheduleToShow = new JSONObject(this.schedule);
+		scheduleToShow.put("time", dateFormat.format(this.time));
+		return scheduleToShow.toJSONString();
+	}
 }

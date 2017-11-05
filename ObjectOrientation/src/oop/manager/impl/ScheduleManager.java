@@ -1,4 +1,4 @@
-package homework01;
+package oop.manager.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,12 @@ import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import homework02.JsonManager;
+import oop.javabean.Schedule;
+import oop.manager.JsonManager;
 
 public class ScheduleManager implements JsonManager {
 
-	private static final String PATH = "src\\homework01\\schedule.json";
+	private static final String PATH = "src\\oop\\json\\config\\schedule.json";
 
 	private List<Schedule> schedules = new ArrayList<Schedule>();
 
@@ -22,15 +23,11 @@ public class ScheduleManager implements JsonManager {
 
 		try {
 			JSONArray schedulesJsonArray = (JSONArray) getJsonObject(PATH).get("schedules");
-			for (int i = 0; i < schedulesJsonArray.size(); i++) {
-				JSONObject scheduleJsonObj = (JSONObject) schedulesJsonArray.get(i);
+			schedulesJsonArray.forEach(schedule -> {
+				JSONObject scheduleJsonObject = (JSONObject) schedule;
+				schedules.add(new Schedule(scheduleJsonObject));
+			});
 
-				String ext = (String) scheduleJsonObj.get("ext");
-				String time = (String) scheduleJsonObj.get("time");
-				String interval = (String) scheduleJsonObj.get("interval");
-
-				schedules.add(new Schedule(ext, time, interval));
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -46,6 +43,6 @@ public class ScheduleManager implements JsonManager {
 
 	@Override
 	public void printListContent() {
-		schedules.forEach(schedule -> System.out.println(schedule));
+		schedules.forEach(System.out::println);
 	}
 }

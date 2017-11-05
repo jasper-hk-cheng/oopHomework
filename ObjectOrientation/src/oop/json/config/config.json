@@ -1,0 +1,46 @@
+{
+	"configs": [
+		{
+			"ext": "pdf",
+			"location": "g:\\oopDirOrigin",
+			"subDirectory": false,
+			"unit": "file",
+			"remove": false,
+			"handlers": [
+				"zip",
+				"encode"
+			],
+			"destination": "directory",
+			"dir": "g:\\oopDirTarget",
+			"connectionString": ""
+		},
+		{
+			"ext": "txt",
+			"location": "g:\\oopDirOrigin",
+			"subDirectory": false,
+			"unit": "file",
+			"remove": false,
+			"handlers": [
+				"encode",
+				"zip"
+			],
+			"destination": "directory",
+			"dir": "g:\\oopDirTarget",
+			"connectionString": ""
+		},
+		{
+			"ext": "png",
+			"location": "g:\\oopDirOrigin",
+			"subDirectory": false,
+			"unit": "file",
+			"remove": false,
+			"handlers": [
+				"zip",
+				"encode"
+			],
+			"destination": "directory",
+			"dir": "g:\\oopDirTarget",
+			"connectionString": ""
+		}
+	]
+}
