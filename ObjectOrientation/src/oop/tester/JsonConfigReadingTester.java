@@ -13,7 +13,11 @@ public class JsonConfigReadingTester {
 		myBackupService.getManagers().forEach(mamager -> {
 			System.out.println(mamager.getCount());
 		});
-		
+
 		myBackupService.doBackUp();
+		/*
+		 * notice: the backup file will be generated at package "oop.backup.file.goal"
+		 * after execute the main method, please press the F5 to refresh this workspace to check the *.bak files.
+		 */
 	}
 }

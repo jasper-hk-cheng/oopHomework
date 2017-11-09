@@ -2,8 +2,8 @@
 	"configs": [
 		{
 			"ext": "pdf",
-			"location": "g:\\oopDirOrigin",
-			"subDirectory": false,
+			"location": "src\\oop\\backup\\file\\departure",
+			"subDirectory": true,
 			"unit": "file",
 			"remove": false,
 			"handlers": [
@@ -11,13 +11,13 @@
 				"encode"
 			],
 			"destination": "directory",
-			"dir": "g:\\oopDirTarget",
+			"dir": "src\\oop\\backup\\file\\goal",
 			"connectionString": ""
 		},
 		{
 			"ext": "txt",
-			"location": "g:\\oopDirOrigin",
-			"subDirectory": false,
+			"location": "src\\oop\\backup\\file\\departure",
+			"subDirectory": true,
 			"unit": "file",
 			"remove": false,
 			"handlers": [
@@ -25,13 +25,13 @@
 				"zip"
 			],
 			"destination": "directory",
-			"dir": "g:\\oopDirTarget",
+			"dir": "src\\oop\\backup\\file\\goal",
 			"connectionString": ""
 		},
 		{
 			"ext": "png",
-			"location": "g:\\oopDirOrigin",
-			"subDirectory": false,
+			"location": "src\\oop\\backup\\file\\departure",
+			"subDirectory": true,
 			"unit": "file",
 			"remove": false,
 			"handlers": [
@@ -39,7 +39,7 @@
 				"encode"
 			],
 			"destination": "directory",
-			"dir": "g:\\oopDirTarget",
+			"dir": "src\\oop\\backup\\file\\goal",
 			"connectionString": ""
 		}
 	]
