@@ -1,8 +1,8 @@
 package oop.file.finder;
 
 import oop.file.finder.impl.LocalFileFinder;
-import oop.javabean.Candidate;
 import oop.javabean.Config;
+import oop.my.backup.candidate.Candidate;
 
 public class FileFinderFactory {
 

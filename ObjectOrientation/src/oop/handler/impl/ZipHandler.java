@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.zip.Deflater;
 
 import oop.handler.AbstractHandler;
-import oop.javabean.Candidate;
+import oop.my.backup.candidate.Candidate;
 
 public class ZipHandler extends AbstractHandler {
 

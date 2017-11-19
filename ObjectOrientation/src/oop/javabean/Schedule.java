@@ -13,6 +13,8 @@ public class Schedule {
 	private Timestamp time;
 
 	private static final DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+	private static final DateFormat dateFormatHour = new SimpleDateFormat("HH");
+	private static final DateFormat dateFormatMinute = new SimpleDateFormat("mm");
 
 	/**
 	 * constructor the unit of interval is minute...(i guess so...)
@@ -31,6 +33,14 @@ public class Schedule {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public int getHour() {
+		return Integer.parseInt(dateFormatHour.format(time));
+	}
+	
+	public int getMinute() {
+		return Integer.parseInt(dateFormatMinute.format(time));
 	}
 
 	/*

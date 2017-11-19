@@ -1,7 +1,7 @@
 package oop.file.finder;
 
-import oop.javabean.Candidate;
 import oop.javabean.Config;
+import oop.my.backup.candidate.Candidate;
 
 public abstract class AbstractFileFinder implements FileFinder<Candidate> {
 

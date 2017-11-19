@@ -40,7 +40,6 @@ public class ConfigManager implements JsonManager {
 	/*
 	 * getter
 	 */
-	//FIXME notice: for simulating MyBackupService.findFiles() only, not really be necessary to create the getter... 
 	public List<Config> getConfigs() {
 		return configs;
 	}

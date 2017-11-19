@@ -1,19 +1,19 @@
 {
 	"schedules": [
 		{
-			"ext": "cs",
-			"time": "12:00",
-			"interval": "Everyday"
+			"ext": "pdf",
+			"time": "01:47",
+			"interval": "everyday"
 		},
 		{
-			"ext": "docx",
+			"ext": "txt",
 			"time": "20:00",
-			"interval": "Everyday"
+			"interval": "everyday"
 		},
 		{
-			"ext": "jpg",
+			"ext": "png",
 			"time": "7:00",
-			"interval": "Monday"
+			"interval": "monday"
 		}
 	]
 }

@@ -1,6 +1,6 @@
 package oop.handler;
 
-import oop.javabean.Candidate;
+import oop.my.backup.candidate.Candidate;
 
 public abstract class AbstractHandler implements Handler {
 

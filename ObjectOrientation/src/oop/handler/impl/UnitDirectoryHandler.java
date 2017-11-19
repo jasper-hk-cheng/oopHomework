@@ -1,7 +1,7 @@
 package oop.handler.impl;
 
 import oop.handler.Handler;
-import oop.javabean.Candidate;
+import oop.my.backup.candidate.Candidate;
 
 public class UnitDirectoryHandler implements Handler {
 
@@ -23,7 +23,6 @@ public class UnitDirectoryHandler implements Handler {
 
 	@Override
 	public byte[] perform(Candidate candidate, byte[] target) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

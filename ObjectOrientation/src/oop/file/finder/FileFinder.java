@@ -1,6 +1,6 @@
 package oop.file.finder;
 
-import oop.javabean.Candidate;
+import oop.my.backup.candidate.Candidate;
 
 public interface FileFinder<T> extends IEnumerable<Candidate>, IEnumerator<Candidate> {
 

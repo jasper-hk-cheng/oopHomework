@@ -8,13 +8,15 @@ public class JsonConfigReadingTester {
 	public static void main(String[] args) {
 
 		MyBackupService myBackupService = new MyBackupService();
-		myBackupService.processJSONConfig();
+		
+		// check the result of processJSONConfig method
 		myBackupService.getManagers().forEach(JsonManager::printListContent);
 		myBackupService.getManagers().forEach(mamager -> {
 			System.out.println(mamager.getCount());
 		});
 
-		myBackupService.doBackUp();
+		myBackupService.simpleBackup();
+		myBackupService.scheduledBackup();
 		/*
 		 * notice: the backup file will be generated at package "oop.backup.file.goal"
 		 * after execute the main method, please press the F5 to refresh this workspace to check the *.bak files.

@@ -10,5 +10,11 @@ public interface IEnumerator<T> {
 
 	void reset();
 	
-	void forEach(Consumer<T> consumer);
+	default void forEach(Consumer<T> consumer) {
+		reset();
+
+		while (moveNext()) {
+			consumer.accept(current());
+		}
+	}
 }

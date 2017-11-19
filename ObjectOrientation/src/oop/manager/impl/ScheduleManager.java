@@ -32,17 +32,24 @@ public class ScheduleManager implements JsonManager {
 			e.printStackTrace();
 		}
 	}
-
+	
+	@Override
+	public void printListContent() {
+		schedules.forEach(System.out::println);
+	}
+	
+	/*
+	 * getter
+	 */
+	public List<Schedule> getSchedules() {
+		return schedules;
+	}
+	
 	@Override
 	public Integer getCount() {
 		if (count == null) {
 			count = schedules.size();
 		}
 		return count;
-	}
-
-	@Override
-	public void printListContent() {
-		schedules.forEach(System.out::println);
 	}
 }

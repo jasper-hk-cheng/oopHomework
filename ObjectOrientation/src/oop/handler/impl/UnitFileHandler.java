@@ -7,8 +7,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 import oop.handler.AbstractHandler;
-import oop.javabean.Candidate;
 import oop.javabean.Config;
+import oop.my.backup.candidate.Candidate;
 
 public class UnitFileHandler extends AbstractHandler {
 

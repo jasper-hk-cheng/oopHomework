@@ -7,8 +7,8 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 
 import oop.handler.AbstractHandler;
-import oop.javabean.Candidate;
 import oop.javabean.Config;
+import oop.my.backup.candidate.Candidate;
 
 public class DestinationDirectoryHandler extends AbstractHandler {
 

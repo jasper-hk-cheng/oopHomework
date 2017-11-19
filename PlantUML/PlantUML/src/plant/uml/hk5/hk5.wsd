@@ -1,0 +1,76 @@
+@startuml MyClassDiagram
+ 
+class MyBackupService {
+	-managers
+	-taskDispatcher
+	
+	+init()
+	+simpleBackup()
+	+scheduledBackup()
+	-processJSONConfigs()
+	+getManagers()
+}
+
+class TaskDispatcher {
+	-task
+	
+	+simpleTask()
+	+scheduledTask()
+}
+
+class CandidateFactory {
+	{static} +create()
+}
+
+class Candidate {
+	-config
+	-fileDateTime
+	-name
+	-processName
+	-size
+	
+	+getConfig()
+	+getFileDateTime()
+	+getName()
+	+getProcessName()
+	+getSize()
+}
+
+class TaskFactory {
+	{static} +create()
+}
+
+interface Task {
+	+execute()
+}
+
+abstract class AbstractTask {
+	#fileFinder
+	
+	+execute()
+	#broadcastToHandlers()
+	-findHandlers()
+}
+
+class SimpleTask {
+	+execute()
+}
+
+class ScheduledTask {
+	-consumer
+	{static} -weekdays
+	
+	+execute()
+}
+
+Task <|..AbstractTask
+AbstractTask <|-- SimpleTask
+AbstractTask <|-- ScheduledTask
+
+MyBackupService .> TaskDispatcher
+TaskDispatcher .> TaskFactory
+TaskFactory *-> Task
+
+CandidateFactory *-> Candidate
+
+@enduml

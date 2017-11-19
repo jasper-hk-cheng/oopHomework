@@ -3,7 +3,7 @@ package oop.handler.impl;
 import java.util.Base64;
 
 import oop.handler.AbstractHandler;
-import oop.javabean.Candidate;
+import oop.my.backup.candidate.Candidate;
 
 public class EncodeHandler extends AbstractHandler {
 
@@ -40,6 +40,7 @@ public class EncodeHandler extends AbstractHandler {
 
 		if (target != null) {
 			result = Base64.getEncoder().encode(target);
+			//Base64.getDecoder().decode(target);
 		}
 		return result;
 	}
