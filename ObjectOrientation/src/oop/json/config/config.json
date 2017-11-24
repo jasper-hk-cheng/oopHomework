@@ -10,7 +10,7 @@
 				"zip",
 				"encode"
 			],
-			"destination": "directory",
+			"destination": "database",
 			"dir": "src\\oop\\backup\\file\\goal",
 			"connectionString": ""
 		},
@@ -24,7 +24,7 @@
 				"encode",
 				"zip"
 			],
-			"destination": "directory",
+			"destination": "database",
 			"dir": "src\\oop\\backup\\file\\goal",
 			"connectionString": ""
 		},
@@ -38,7 +38,7 @@
 				"zip",
 				"encode"
 			],
-			"destination": "directory",
+			"destination": "database",
 			"dir": "src\\oop\\backup\\file\\goal",
 			"connectionString": ""
 		}

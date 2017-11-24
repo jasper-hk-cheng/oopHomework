@@ -35,8 +35,8 @@ public class TaskDispatcher {
 		Function<JsonManager, String> getKey = jsonManager -> jsonManager.getClass().getSimpleName();
 		Function<JsonManager, JsonManager> getValue = jsonManager -> jsonManager;
 		Map<String, JsonManager> managersMap = managers.stream().collect(Collectors.toMap(getKey, getValue));
-		ConfigManager configManager = (ConfigManager) managersMap.get("ConfigManager");
-		ScheduleManager scheduleManager = (ScheduleManager) managersMap.get("ScheduleManager");
+		ConfigManager configManager = (ConfigManager) managersMap.get(ConfigManager.class.getSimpleName());
+		ScheduleManager scheduleManager = (ScheduleManager) managersMap.get(ScheduleManager.class.getSimpleName());
 
 		scheduleManager.getSchedules().forEach(schedule -> {
 			configManager.getConfigs().forEach(config -> {

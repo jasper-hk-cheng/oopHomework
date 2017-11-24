@@ -11,7 +11,7 @@ import java.util.zip.ZipOutputStream;
 
 /**
  * notice: for testing and studying only, not a part of this homework.
- * if you are the supervisor of the homework, please ignore the java code below...
+ * if you are the supervisor of the homework, please ignore all the java code below...
  * 
  * @author jasper
  *

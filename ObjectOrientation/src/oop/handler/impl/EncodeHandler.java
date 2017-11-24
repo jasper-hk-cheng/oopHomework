@@ -36,13 +36,10 @@ public class EncodeHandler extends AbstractHandler {
 
 	private byte[] encodeData(Candidate candidate, byte[] target) {
 		byte[] result = target;
-		super.perform(candidate, target);
 
 		if (target != null) {
 			result = Base64.getEncoder().encode(target);
-			//Base64.getDecoder().decode(target);
 		}
 		return result;
 	}
-
 }

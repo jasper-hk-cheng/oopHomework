@@ -20,8 +20,11 @@ public class ScheduledTask extends AbstractTask {
 		{
 			put("sunday", Calendar.SUNDAY);
 			put("monday", Calendar.MONDAY);
-
-			// the other week is ignored...
+			put("tuesday", Calendar.TUESDAY);
+			put("wednesday", Calendar.WEDNESDAY);
+			put("thursday", Calendar.THURSDAY);
+			put("friday", Calendar.FRIDAY);
+			put("saturday", Calendar.SATURDAY);
 		}
 	};
 
@@ -49,20 +52,20 @@ public class ScheduledTask extends AbstractTask {
 				startTime.add(Calendar.DATE, 1);
 
 			} else if (weekdays.containsKey(interval)) {
-				startTime.add(Calendar.DAY_OF_WEEK, 1);
+				startTime.add(Calendar.DATE, 7);
 			}
 		}
-		
-		System.out.println("schedule process completed !!");
-		
+
 		Timer timer = new Timer();
+		// the schedule will catch up the task if the task was out of date... 
 		timer.schedule(new TimerTask() {
 			@Override
 			public void run() {
 				System.out.println("start backup...");
 				fileFinder.forEach(consumer);
-				timer.cancel();
 			}
 		}, startTime.getTime(), period);
+		
+		System.out.println("schedule process completed !! start time: " + startTime.getTime() + " periods: " + period);
 	}
 }

@@ -4,5 +4,5 @@
 	"zip": "ZipHandler",
 	"encode": "EncodeHandler",
 	"directory": "DestinationDirectoryHandler",
-	"destinationDatabase": "DestinationDatabaseHandler"
+	"database": "DBAdapter"
 }
